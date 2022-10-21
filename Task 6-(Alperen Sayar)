@@ -1,0 +1,30 @@
+1) Json-Dictionary arasındaki fark nedir?
+
+-JSON anahtarları bir dize olmalıdır, ancak Python dictionary herhangi bir değişmez türe sahip olabilir
+-JSON dilden bağımsız, evrensel bir temsildir, oysa dictionary  yerleşik Python veri türüdür
+-JSON, Python dictionary'lerine benzer bir veri yapısıdır, ancak JSON, Python dictionary'lerinden daha geneldir
+
+2) Dumps Ne işe yarıyor?
+
+-JSON verilerini Python verilerine dönüştürür
+
+3) Neden encode kullandık?
+Dizilerin verimli bir şekilde saklanması için.
+
+4) Neden data.encode.utf-8nşeklinde kullanmadık?
+Kafka için kullandığımız için veriyi önce json formatına dönüştürüp sonradan encode işlemi yapmalıyız.
+
+5) Json dumps nedir json load nedir json loads nedir ?
+
+-Loads() yöntemi, geçerli bir JSON dizesini ayrıştırmak ve onu bir Python Sözlüğüne dönüştürmek için kullanılabilir
+-Load() bir dosya nesnesini alır ve json nesnesini döndürür. Bir dosyadan JSON kodlu verileri okumak ve onu bir Python sözlüğüne dönüştürmek ve bir dosyanın kendisini seri durumdan çıkarmak için kullanılır, yani bir dosya nesnesini kabul eder.
+-Json. dumps() yöntemi, bir python nesnesini eşdeğer bir JSON nesnesine dönüştürmemize olanak tanır. Veya başka bir deyişle, verileri python'dan json'a göndermek için.
+
+6) Dockera girdikten sonra spesific bir container hangi networkta çalışıyor ve default ip nasıl bulunacak? Bir satırlık kod olarak yazılacak.
+Bridge network üzerinden çalışıyor. docker inspect -f “{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}” ContainerID
+
+7) Neden UTF-8 kullanıyoruz?
+Python default olarak bu türe bağlıdır.
+
+8) 192.168.0.1 nedir ve 127.00.01 arasındaki fark nedir?
+192.168.0.1 modem ip adresidir. 127.00.01 ise bilgisayarın sahip olduğu yerel ip adresidir.
